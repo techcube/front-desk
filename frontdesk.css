@@ -1,0 +1,78 @@
+body {
+	background: url('background.png');
+	height: 90%;
+	font-family: arial, sans-serif;
+}
+
+#panelContainer {
+	height: 100%;
+	width: 90%;
+}
+
+#panelContainer .panelOuterWrapper {
+	width: 33%;
+	height: 50%;
+	float: left;
+}
+
+#panelContainer .panelOuterWrapper .panelInnerWrapper{
+	margin: 30px;
+	padding: 5px;
+	background: white;
+	height: 90%;
+	overflow: hidden;
+	-webkit-border-radius: 5px; 
+	border-radius: 5px;	
+}
+
+.panel .logo {
+	float: right;
+	padding: 5px;
+}
+.panel .logo img {
+	max-width: 75px;
+	max-height: 75px;
+}
+
+.panel .title {
+	font-weight: bold;
+	font-size: 30pt;
+	padding: 5px 0;
+}
+.panel .title .when {
+	color: red;
+}
+.panel .title a {
+	text-decoration: none;
+	color: black;
+}
+.panel .description {
+	font-size: 25pt;
+	padding: 5px 0;
+}
+
+#infoScreen {
+	position: absolute;
+	height: 100%;
+	width: 99%;
+	top: 0;
+	background: url('background.png');
+	display: none;
+}
+#infoScreen #techcube {
+	text-align: center;
+	padding: 50px 0;
+}
+#infoScreen #techcube img {
+	max-height: 300px;
+	max-width: 300px;
+}
+#infoScreen #techcubepeople {
+	text-align: center;
+	padding: 50px 10px;
+}
+#infoScreen #techcubepeople img {
+	margin: 10px;
+	max-height: 150px;
+	max-width: 150px;
+}
