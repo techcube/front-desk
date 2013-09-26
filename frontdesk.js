@@ -82,7 +82,7 @@ setInterval(function(){
 
 // Reload the whole page every hour to get new data
 setTimeout(function () {
-	location.reload(false);
+	location.reload(true);
 },60*60*60*1000);
 
 // All right, let's go!
