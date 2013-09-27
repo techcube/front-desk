@@ -5,7 +5,7 @@ function loadEvents() {
 	$.ajax({
 		type : "GET",
 		dataType : "jsonp",
-		url : "http://techcubehouseevents.api1.hasacalendar.co.uk/event/jsonp?callback=?", 
+		url : "http://techcubehouseevents.hasacalendar.co.uk/api1/event/jsonp?callback=?", 
 		success: function(data1){
 			// add url for logo for this source
 			for(i in data1.data) {
