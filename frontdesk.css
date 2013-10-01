@@ -1,12 +1,13 @@
 body {
-	background: url('background.png');
+	background-color:white
+;
 	height: 90%;
-	font-family: arial, sans-serif;
+	font-family: miso-bold;
 }
 
 #panelContainer {
 	height: 100%;
-	width: 90%;
+	width: 100%;
 }
 
 #panelContainer .panelOuterWrapper {
@@ -17,17 +18,19 @@ body {
 
 #panelContainer .panelOuterWrapper .panelInnerWrapper{
 	margin: 30px;
-	padding: 5px;
-	background: white;
+	padding: 15px;
+	background: #F0F0F0;
+	border-style:solid;
+    border-width:1px;
 	height: 90%;
 	overflow: hidden;
-	-webkit-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
 	border-radius: 5px;	
 }
 
 .panel .logo {
 	float: right;
-	padding: 5px;
+	padding: 10px;
 }
 .panel .logo img {
 	max-width: 75px;
@@ -35,19 +38,21 @@ body {
 }
 
 .panel .title {
+	font:impact;
 	font-weight: bold;
-	font-size: 30pt;
+	font-size: 25pt;
 	padding: 5px 0;
 }
 .panel .title .when {
-	color: red;
+	color: #D11919;
+	font-size: 25pt;
 }
 .panel .title a {
 	text-decoration: none;
 	color: black;
 }
 .panel .description {
-	font-size: 25pt;
+	font-size: 12pt;
 	padding: 5px 0;
 }
 
@@ -56,7 +61,7 @@ body {
 	height: 100%;
 	width: 99%;
 	top: 0;
-	background: url('background.png');
+	background-color:white;
 	display: none;
 }
 #infoScreen #techcube {
@@ -65,7 +70,7 @@ body {
 }
 #infoScreen #techcube img {
 	max-height: 300px;
-	max-width: 300px;
+	max-width: 500px;
 }
 #infoScreen #techcubepeople {
 	text-align: center;
