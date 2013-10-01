@@ -1,6 +1,6 @@
 
 function loadEvents() {
-	var data;
+	var data = new Array();
 	// get techcube data
 	$.ajax({
 		type : "GET",
@@ -9,21 +9,24 @@ function loadEvents() {
 		success: function(data1){
 			// add url for logo for this source
 			for(i in data1.data) {
-				data1.data[i].sourcelogo="techcube.png";
+				if (!data1.data[i].deleted) {
+					data1.data[i].sourcelogo="techcube.png";
+					data.push(data1.data[i]);
+				}
 			}
-			data = data1.data;
 			// get Open Tech Calendar data
 			$.ajax({
 				type : "GET",
 				dataType : "jsonp",
 				url : "http://opentechcalendar.co.uk/index.php/location/1/jsonp?callback=?", 
 				success: function(data2){
-					// add url for logo for this source
+					// add url for logo for this source, mix 2 data sources
 					for(i in data2.data) {
-						data2.data[i].sourcelogo="opentechcalendar.png";
+						if (!data2.data[i].deleted) {
+							data2.data[i].sourcelogo="opentechcalendar.png";
+							data.push(data2.data[i]);
+						}
 					}
-					// mix 2 data sources
-					data = data.concat(data2.data);
 					// sort by start time
 					data = data.sort(function(a,b) {
 						if (a.start.timestamp == b.start.timestamp) {
