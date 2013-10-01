@@ -69,8 +69,8 @@ body {
 	padding: 50px 0;
 }
 #infoScreen #techcube img {
-	max-height: 300px;
-	max-width: 500px;
+	max-height: 500px;
+	max-width: 1000px;
 }
 #infoScreen #techcubepeople {
 	text-align: center;
