@@ -1,8 +1,11 @@
+@import url(misoregular.css);
+@import url(leaguegothic.css);
+
 body {
 	background-color:white
 ;
 	height: 90%;
-	font-family: miso-bold;
+	font-family: 'MisoRegular';
 }
 
 #panelContainer {
@@ -38,8 +41,7 @@ body {
 }
 
 .panel .title {
-	font:impact;
-	font-weight: bold;
+  font-family: 'League Gothic';
 	font-size: 25pt;
 	padding: 5px 0;
 }
