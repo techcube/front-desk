@@ -1,8 +1,10 @@
+@import url(misoregular.css);
+
 body {
 	background-color:white
 ;
 	height: 90%;
-	font-family: miso-bold;
+	font-family: 'MisoRegular';
 }
 
 #panelContainer {
