@@ -42,19 +42,19 @@ body {
 
 .panel .title {
   font-family: 'League Gothic';
-	font-size: 25pt;
+	font-size: 30pt;
 	padding: 5px 0;
 }
 .panel .title .when {
 	color: #D11919;
-	font-size: 25pt;
+	font-size: 30pt;
 }
 .panel .title a {
 	text-decoration: none;
 	color: black;
 }
 .panel .description {
-	font-size: 12pt;
+	font-size: 20pt;
 	padding: 5px 0;
 }
 
