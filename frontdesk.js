@@ -83,7 +83,7 @@ function escapeHTMLNewLine(str) {
 		$('#sodashTwitterWall')
 	],
 		screenIndex = 0,
-		cyclePeriod = 2 * 1000; // 20 seconds per screen.
+		cyclePeriod = 20 * 1000; // 20 seconds per screen.
 	
 	setInterval(function () {
 		var i;
