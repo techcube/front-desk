@@ -75,27 +75,30 @@ function escapeHTMLNewLine(str) {
 	return out.replace(/\n/g,'<br>');
 }
 
-(function () {
+var screenIndex = 0;
+function cycleFn() {
 	// The screens to cycle between.
 	var screens = [
 		$('#panelContainer'),
 		$('#infoScreen'),
 		$('#sodashTwitterWall')
-	],
-		screenIndex = 0,
-		cyclePeriod = 20 * 1000; // 20 seconds per screen.
+	];
+
+	screenIndex = (screenIndex + 1) % screens.length;
 	
-	setInterval(function () {
-		var i;
-		
-		screenIndex = (screenIndex + 1) % screens.length;
-		
-		for (i = 0; i < screens.length; i++) {
-			screens[i].hide();
-		}
-		
-		screens[screenIndex].show();
-	}, cyclePeriod);
+	for (var i = 0; i < screens.length; i++) {
+		screens[i].hide();
+	}
+	
+	screens[screenIndex].show();
+}
+
+(function () {
+
+	$('body').click(cycleFn);
+	
+	var cyclePeriod = 20 * 1000; // 20 seconds per screen.
+	setInterval(cycleFn, cyclePeriod);
 }());
 
 // Reload the whole page every hour to get new data
