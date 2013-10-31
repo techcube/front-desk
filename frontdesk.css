@@ -2,8 +2,7 @@
 @import url(leaguegothic.css);
 
 body {
-	background-color:white
-;
+	background-color:white;
 	height: 90%;
 	font-family: 'MisoRegular';
 }
@@ -19,7 +18,7 @@ body {
 	float: left;
 }
 
-#panelContainer .panelOuterWrapper .panelInnerWrapper{
+#panelContainer .panelOuterWrapper .panelInnerWrapper {
 	margin: 30px;
 	padding: 15px;
 	background: #F0F0F0;
@@ -82,4 +81,23 @@ body {
 	margin: 10px;
 	max-height: 150px;
 	max-width: 150px;
+	vertical-align: middle;
 }
+
+#sodashTwitterWall {
+  width: 99%; /* 100% would be normal -- but given that body has a margin (?!), we go smaller to avoid scroll bars. */
+  height: 99%;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  position: absolute;
+  top: 0px;
+  display: none;
+}
+
+#sodashTwitterWall iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+

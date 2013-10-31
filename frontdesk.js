@@ -75,13 +75,31 @@ function escapeHTMLNewLine(str) {
 	return out.replace(/\n/g,'<br>');
 }
 
-// flash between the 2 screens
-setInterval(function(){
-	$('#infoScreen').show();
-	setTimeout(function () {
-		$('#infoScreen').hide();
-	}, 20*1000);
-},60*1000);
+var screenIndex = 0;
+function cycleFn() {
+	// The screens to cycle between.
+	var screens = [
+		$('#panelContainer'),
+		$('#infoScreen'),
+		$('#sodashTwitterWall')
+	];
+
+	screenIndex = (screenIndex + 1) % screens.length;
+	
+	for (var i = 0; i < screens.length; i++) {
+		screens[i].hide();
+	}
+	
+	screens[screenIndex].show();
+}
+
+(function () {
+
+	$('body').click(cycleFn);
+	
+	var cyclePeriod = 20 * 1000; // 20 seconds per screen.
+	setInterval(cycleFn, cyclePeriod);
+}());
 
 // Reload the whole page every hour to get new data
 setTimeout(function () {
