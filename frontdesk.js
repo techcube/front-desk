@@ -75,15 +75,7 @@ function escapeHTMLNewLine(str) {
 	return out.replace(/\n/g,'<br>');
 }
 
-// flash between the 2 screens
-//setInterval(function(){
-//	$('#infoScreen').show();
-//	setTimeout(function () {
-//		$('#infoScreen').hide();
-//	}, 20*1000);
-//},60*1000);
-
-// rotate between three screens... thanks stackoverflow!
+// rotate between all screens... thanks stackoverflow!
 var divs = $('.fade');
 
 function fade() {
@@ -103,7 +95,7 @@ function fade() {
 
     current.stop().fadeOut(2000, function() {
         $(this).removeClass('current');
-        setTimeout(fade, 20*1000);
+        setTimeout(fade, 5*1000);
     });
 }
 
