@@ -1,85 +1,11 @@
 <html>
 	<head>
-		<title>Tech Cube Front Desk</title>
 		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 		<link rel="stylesheet" type="text/css" href="frontdesk.css">
 	</head>
 	<body>
-		<div id="panelContainer" class="fade current">
-			<div class="panelOuterWrapper">
-				<div class="panelInnerWrapper">
-					<div id="Panel0" class="panel">
-						&nbsp;
-					</div>
-				</div>
-			</div>
-			<div class="panelOuterWrapper">
-				<div class="panelInnerWrapper">
-					<div id="Panel1" class="panel">
-						&nbsp;
-					</div>
-				</div>
-			</div>
-			<div class="panelOuterWrapper">
-				<div class="panelInnerWrapper">
-					<div id="Panel2" class="panel">
-						&nbsp;
-					</div>
-				</div>
-			</div>
-			<div class="panelOuterWrapper">
-				<div class="panelInnerWrapper">
-					<div id="Panel3" class="panel">
-						&nbsp;
-					</div>
-				</div>
-			</div>
-			<div class="panelOuterWrapper">
-				<div class="panelInnerWrapper">
-					<div id="Panel4" class="panel">
-						&nbsp;
-					</div>
-				</div>
-			</div>
-			<div class="panelOuterWrapper">
-				<div class="panelInnerWrapper">
-					<div id="Panel5" class="panel">
-						&nbsp;
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div id="infoScreen" class="fade">
-			<div id="techcube">
-				<img src="techcubelarge.png">
-			</div>
-			<div id="techcubepeople">
-				<img src="onepartcarbon.png">
-				<img src="administrate.png">
-				<img src="camelaudio.png">
-				<img src="clink.png">
-				<img src="confbuzz_black.png">
-				<img src="cloudsoft.png">
-				<img src="ecosurgical.png">
-				<img src="fanduel.png">
-				<img src="float.png">
-				<img src="makurmedia.jpg">
-				<img src="neo.png">
-				<img src="opentechcalendar.png">
-				<img src="outplay.jpg">
-				<img src="peekabu.png">
-				<img src="planforcloud.png">
-				<img src="softwarealliance.png">
-				<img src="stipso.jpg">
-				<img src="textaport.png">
-				<img src="winterwell.png">
-				
-			</div>
-		</div>
-
-		<div id="busTracker" class="fade">
-						<div id="techCubePosition">
+				<div id="busTrackerTest">
+			<div id="techCubePosition">
 				<img src="techcube.png" width="100"/>
 			</div>
 			<div id="toMeadows" class="stop">
@@ -158,18 +84,15 @@
 					<input type="hidden" id="customizeDest4" name="customizeDest4" value="0"/>
 					<input type="hidden" id="customizeDest5" name="customizeDest5" value="0"/>
 				</form>	
-			</div>	
-			<div id="resultOutput">Test</div>
+		</div>	
+		<div id="resultOutput">Test</div>
 
-		</div>
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-		<script src="frontdesk.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>	
 		<script src="bustracker.js" type="text/javascript"></script>
 		<script>
 			$(document).ready(function(){
 				_ajaxJson('http://www.mybustracker.co.uk//update.php?module=BTTimeConsult&updateId=timesResult');
-				setTimeout(function () {
+				setInterval(function () {
 					_ajaxJson('http://www.mybustracker.co.uk//update.php?module=BTTimeConsult&updateId=timesResult');
 				},20*1000);
 			});

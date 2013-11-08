@@ -83,3 +83,73 @@ body {
 	max-height: 150px;
 	max-width: 150px;
 }
+
+
+#busTracker {
+	position: absolute;
+	height: 100%;
+	width: 99%;
+	top: 0;
+	background-image: url('map.png');
+	display: none;
+}
+
+#busTrackerTest {
+	position: absolute;
+	height: 100%;
+	width: 99%;
+	top: 0;
+	background-image: url('map.png');
+	background-repeat: no-repeat;
+}
+
+
+#toMeadows {
+	position: absolute;
+	top: 175px;
+	left: 1560px;
+}
+
+#toMayfieldRoad {
+	position: absolute;
+	top:370px;
+	left:770px;
+}
+
+#toCameronToll {
+	position:absolute;
+	top: 910px;
+	left: 1090px;
+}
+
+#toCommiePool
+{
+	position:absolute;
+	top: 710px;
+	left: 1495px;
+}
+
+#toTown {
+	position: absolute;;
+	/*top: 810px;*/
+	top: 600px;
+	left: 700px;
+}
+
+#techCubePosition {
+	position:absolute;
+	top:320px;
+	left:970px;
+}
+
+#resultOutput {
+	display:none;
+}
+
+.stop {
+	background-color: rgba(0,0,0,0.4);
+	padding: 20px;
+	font-size:24pt;
+	color:white;
+	width:140px;
+}
