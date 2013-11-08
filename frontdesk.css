@@ -28,7 +28,7 @@ body {
 	height: 90%;
 	overflow: hidden;
 	-webkit-border-radius: 5px; 
-	border-radius: 5px;	
+	border-radius: 5px;	mmmmm
 }
 
 .panel .logo {
@@ -153,4 +153,12 @@ body {
 	font-size:24pt;
 	color:white;
 	width:140px;
+}
+
+#comingSoon 
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 96pt;
 }
