@@ -3,56 +3,33 @@
 
 /* thanks bus tracker... no api access yet.... so hacks away! */
 activeAjax = true;
-function _ajaxJson(url) {
-	// Test if ajax is enabled © (if we do anything)
-	//if (showCursor)
-	//	document.getElementsByTagName ('body') [0] = style.cursor LoadCursor.;
-	if (activeAjax) {	
-		var form = $(document).find('form');
-		$.ajax ({
-		    type: 'POST',
-		    dataType: 'xml',
-		    data: form.serialize(),
-		    cache: 'false',
-		    url: url,
-		    timeout: 20000,
-		    success: function (data) {	
-		    	//console.log(data);
-		    	console.log($(data).find('updateElement').text())
-		    	$("#resultOutput").html($(data).find('updateElement').text());
-		    },
-		    error: function (XMLHttpRequest, textStatus, errorThrown) {
-		    	// do something...
-		    },
-		    complete: function (jqXHR, textStatus) {
-		    	updateBusTimes();
-		    }
-//		    beforeSend: function (jqXHR, settings) {
-		    	//if (preQueryCallBack! preQueryCallBack = null &&! ='')
-		    	//	beforeSendFunctionCall (preQueryCallBack, jqXHR, settings);
-//		    }
-		});
-	}
+
+function getJson(){
+	//$.getJSON('http://api.livetravelmaps.com/data/techcube?jsoncallback=',{format:"json"}).done(function(data){console.log("done");})
+	$.ajax({
+		type : "GET",
+		dataType : "jsonp",
+		url : "http://api.livetravelmaps.com/data/techcube?callback=?", 
+		success: function(data1){
+			// add url for logo for this source
+			//var obj = JSON.parse()
+			updateBusTimes(data1)
+			//updateBusTimes(obj);
+			}
+		})
 }
 
-function getBusTime(bus, stop)
+function getBusTime(bus, stop, data)
 {
 	try {
-		console.log("bus=" + bus + "; stop = " + stop);
-		var service = $("td:contains("+stop+")").parent().next("tr.tblanc").find(".service").filter(function()
+		var val;
+		for (k = 0; k < data.buses.length; k++) {
+			if (data.buses[k].service == bus.toString() && data.buses[k].stop== stop.toString()) 
 			{
-				return $(this).text() == bus;
-			});
-		console.log(service);
-
-		//var val= $("td:contains("+stop+")").parent().next("tr.tblanc").find(".service:contains("+bus+")").next().next().children().first().text();
-		var val= $("td:contains("+stop+")").parent().next("tr.tblanc").find(".service").filter(function()
-			{
-				return $(this).text() == bus;
-			}).next().next().children().first().text();
-
-		console.log(val);
-		//return val;
+				val = data.buses[k].time;
+				break;
+			}
+		}
 		if (val == "DUE" || val.indexOf(":") != -1) 
 			return val;
 		else if (val.trim().length == 0)
@@ -64,11 +41,11 @@ function getBusTime(bus, stop)
 	}
 }
 
-function updateStop(element,stop)
+function updateStop(element,stop,data)
 {
 	$(element + " > div").each(function() {
 		var bus = $(this).attr('class'); 
-		var time = getBusTime(bus,stop);
+		var time = getBusTime(bus,stop,data);
 		var current = $(this).find("span").text()
 		if (time.length == 0) {
 			$(this).find("span").css('color','red');
@@ -86,11 +63,11 @@ function updateStop(element,stop)
 }
 
 
-function updateBusTimes()
+function updateBusTimes(data)
 {
-	updateStop("#toTown","36236562");
-	updateStop("#toMeadows","36238273");
-	updateStop("#toMayfieldRoad","36238786");
-	updateStop("#toCameronToll","36234823");
-	updateStop("#toCommiePool","36234798");
+	updateStop("#toTown","36236562",data);
+	updateStop("#toMeadows","36238273",data);
+	updateStop("#toMayfieldRoad","36238786",data);
+	updateStop("#toCameronToll","36234823",data);
+	updateStop("#toCommiePool","36234798",data);
 }
