@@ -11,10 +11,8 @@ function getJson(){
 		dataType : "jsonp",
 		url : "http://api.livetravelmaps.com/data/techcube?callback=?", 
 		success: function(data1){
-			// add url for logo for this source
-			//var obj = JSON.parse()
+			console.log(data1)
 			updateBusTimes(data1)
-			//updateBusTimes(obj);
 			}
 		})
 }
@@ -30,14 +28,15 @@ function getBusTime(bus, stop, data)
 				break;
 			}
 		}
-		if (val == "DUE" || val.indexOf(":") != -1) 
+		console.log(val)
+		if (val == "DUE" || val.indexOf(":") > 0) 
 			return val;
 		else if (val.trim().length == 0)
 			return ""
 		return val + " mins";
 	}
 	catch (err) {
-		return "ERR!"
+		return "Done"
 	}
 }
 
@@ -49,15 +48,14 @@ function updateStop(element,stop,data)
 		var current = $(this).find("span").text()
 		if (time.length == 0) {
 			$(this).find("span").css('color','red');
-		} else if (current == time) {
-			$(this).find("span").css('color','white');
-			$(this).find("span").css('text-decoration','none');
+		} else if (time == "Done") {
+			$(this).find("span").text("Done");
+			$(this).css('color','red');
 		}
 		else
 		{ 
 			$(this).find("span").text(time);
-			$(this).find("span").css('text-decoration','underline');
-			$(this).find("span").css('color','white');
+			$(this).css('color','white');
 		}
 	});
 }
