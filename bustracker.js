@@ -50,7 +50,7 @@ function updateStop(element,stop,data)
 			$(this).find("span").css('color','red');
 		} else if (time == "Done") {
 			$(this).find("span").text("Done");
-			$(this).css('color','red');
+			$(this).css('color','grey');
 		}
 		else
 		{ 
