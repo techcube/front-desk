@@ -79,6 +79,8 @@ function escapeHTMLNewLine(str) {
 var divs = $('.fade');
 
 function fade() {
+
+	var timeout = 1000;
     var current = $('.current');
     var currentIndex = divs.index(current),
         nextIndex = currentIndex + 1;
@@ -87,21 +89,27 @@ function fade() {
         nextIndex = 0;
     }
 
-    var next = divs.eq(nextIndex);
+	var next = divs.eq(nextIndex);
+    if (next.attr('id') == 'panelContainer') {
+ 		timeout = 20*1000;
+    } else if (next.attr('id') == 'infoScreen') { 
+		timeout = 15 * 1000;
+    } else if (next.attr('id') == 'busTracker' ) {
+ 		timeout = 20 * 1000;    
+  	}
 
+    //alert(next.attr('id'))
     next.stop().fadeIn(2000, function() {
         $(this).addClass('current');
     });
 
     current.stop().fadeOut(2000, function() {
         $(this).removeClass('current');
-        setTimeout(fade, 5*1000);
+        setTimeout(fade, timeout);
     });
 }
 
 fade();
-
-
 
 // Reload the whole page every hour to get new data
 setTimeout(function () {
