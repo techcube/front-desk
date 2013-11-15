@@ -28,7 +28,7 @@ body {
 	height: 90%;
 	overflow: hidden;
 	-webkit-border-radius: 5px; 
-	border-radius: 5px;	mmmmm
+	border-radius: 5px;
 }
 
 .panel .logo {
@@ -152,13 +152,37 @@ body {
 	padding: 20px;
 	font-size:24pt;
 	color:white;
-	width:140px;
+	width:150px;
 }
 
-#comingSoon 
+#travelSidebar 
 {
+
+	padding:15px;
+	width: 550px;
+	height: 100%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	font-size: 96pt;
+	font-size: 24pt;
+	color:white;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.travelAnswer {
+	font-size:30pt;
+	font-weight: bold;
+	text-decoration: underline;
+
+}
+
+#ltm { 
+	bottom:0px; 
+	left:0px; 
+	position:absolute;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	font-size:14pt;
+	color:white;
+	font-family: 'Contrail One', cursive;
 }

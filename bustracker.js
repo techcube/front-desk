@@ -50,7 +50,7 @@ function updateStop(element,stop,data)
 			$(this).find("span").css('color','red');
 		} else if (time == "Done") {
 			$(this).find("span").text("Done");
-			$(this).css('color','red');
+			$(this).css('color','grey');
 		}
 		else
 		{ 
@@ -68,4 +68,18 @@ function updateBusTimes(data)
 	updateStop("#toMayfieldRoad","36238786",data);
 	updateStop("#toCameronToll","36234823",data);
 	updateStop("#toCommiePool","36234798",data);
+	updateWeather(data.weather.rain);
+}
+
+function updateWeather(pp){
+	if (pp < 1) {
+		$('#brolly').text("No, you'll be fine ")
+	} else if (pp < 4) {
+		$('#brolly').text("No, you should be fine.")
+	} else if (pp < 7) {
+		$('#brolly').text("Literally 50/50 - quick look outside!")
+	} else {
+		$('#brolly').text("Yes, it's likely to rain.")
+	}
+
 }
