@@ -77,11 +77,26 @@ function escapeHTMLNewLine(str) {
 
 // rotate between all screens... thanks stackoverflow!
 var divs = $('.fade');
-
+paused = false;
 function fade() {
-
-	var timeout = 1000;
+	if (paused)
+		return;
     var current = $('.current');
+    var out = getNext(current);
+    var next= out[0];
+	var timeout = out[1];
+    //alert(next.attr('id'))
+    next.stop().fadeIn(2000, function() {
+        $(this).addClass('current');
+    });
+
+    current.stop().fadeOut(2000, function() {
+        $(this).removeClass('current');
+        setTimeout(fade, timeout);
+    });
+}
+
+function getNext(current) {
     var currentIndex = divs.index(current),
         nextIndex = currentIndex + 1;
 
@@ -97,19 +112,30 @@ function fade() {
     } else if (next.attr('id') == 'busTracker' ) {
  		timeout = 20 * 1000;    
   	}
-
-    //alert(next.attr('id'))
-    next.stop().fadeIn(2000, function() {
-        $(this).addClass('current');
-    });
-
-    current.stop().fadeOut(2000, function() {
-        $(this).removeClass('current');
-        setTimeout(fade, timeout);
-    });
+  	return [next,timeout];
 }
 
 fade();
+
+$(document).keydown(function(e){
+    if (e.keyCode == 39) { // right-arrow
+    	var current = $('.current');
+   	 	var next = getNext(current)[0];
+    	$(next).addClass('current');
+    	$(next).show();
+    	$(current).removeClass('current');
+	    $(current).hide();
+    	paused = true;
+    } else if (e.keyCode == 32) { // spacebar
+    	if (paused) {
+    		paused = false;
+    		fade();
+    	} else {
+    		paused = true;
+    	}
+    }
+});
+
 
 // Reload the whole page every hour to get new data
 setTimeout(function () {
