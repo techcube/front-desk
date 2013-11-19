@@ -108,22 +108,22 @@ body {
 
 #toMeadows {
 	position: absolute;
-	top: 60px;
-	left: 1595px;
+	top: 67px;
+	left: 1584px;
 	border: red solid 3px;
 }
 
 #toMayfieldRoad {
 	position: absolute;
 	top:160px;
-	left:689px;
+	left:690px;
 	border: blue solid 4px;
 }
 
 #toCameronToll {
 	position:absolute;
 	top: 790px;
-	left: 1145px;
+	left: 1127px;
 	border:orange solid 4px;
 }
 
@@ -131,14 +131,14 @@ body {
 {
 	position:absolute;
 	top: 622px;
-	left: 1545px;
+	left: 1530px;
 	border:#ff00ff solid 4px;
 }
 
 #toTown {
 	position: absolute;;
 	top: 490px;
-	left: 645px;
+	left: 650px;
 	border:green solid 4px;
 }
 
@@ -175,7 +175,7 @@ body {
 }
 
 .travelAnswer {
-	font-size:30pt;
+	font-size:24pt;
 	font-weight: bold;
 	text-decoration: underline;
 
