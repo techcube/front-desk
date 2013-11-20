@@ -69,6 +69,7 @@ function updateBusTimes(data)
 	updateStop("#toCameronToll","36234823",data);
 	updateStop("#toCommiePool","36234798",data);
 	updateWeather(data.weather.rain);
+	updateRoads(data.traffic);
 }
 
 function updateWeather(pp){
@@ -81,5 +82,18 @@ function updateWeather(pp){
 	} else {
 		$('#brolly').text("Yes, it's likely to rain.")
 	}
+}
 
+function updateRoads(traffic) {
+	console.log(traffic);
+	console.log(traffic.incidents.length)
+	if (traffic.incidents == undefined || traffic.incidents.length == 0) {
+		$('#traffic').text("No major local disruptions");
+	} else {
+		output = ""
+		for (i=0;i<traffic.incidents.length;i++) { 
+			output += "<div>" + traffic.incidents[i] +"</div>"
+		}
+		$('#traffic').html(output);
+	}
 }

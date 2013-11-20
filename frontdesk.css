@@ -108,33 +108,38 @@ body {
 
 #toMeadows {
 	position: absolute;
-	top: 125px;
-	left: 1560px;
+	top: 67px;
+	left: 1584px;
+	border: red solid 3px;
 }
 
 #toMayfieldRoad {
 	position: absolute;
-	top:320px;
-	left:770px;
+	top:160px;
+	left:690px;
+	border: blue solid 4px;
 }
 
 #toCameronToll {
 	position:absolute;
-	top: 810px;
-	left: 1140px;
+	top: 790px;
+	left: 1127px;
+	border:orange solid 4px;
 }
 
 #toCommiePool
 {
 	position:absolute;
-	top: 660px;
-	left: 1495px;
+	top: 622px;
+	left: 1530px;
+	border:#ff00ff solid 4px;
 }
 
 #toTown {
 	position: absolute;;
 	top: 490px;
-	left: 690px;
+	left: 650px;
+	border:green solid 4px;
 }
 
 #techCubePosition {
@@ -170,7 +175,7 @@ body {
 }
 
 .travelAnswer {
-	font-size:30pt;
+	font-size:24pt;
 	font-weight: bold;
 	text-decoration: underline;
 
